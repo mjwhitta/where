@@ -11,7 +11,7 @@ import (
 var cache = map[string]string{}
 
 // Version is the package version.
-const Version = "1.0.0"
+const Version = "1.0.1"
 
 // Is will return the full path to the specified cmd if it exists in
 // the defined PATH env var.
