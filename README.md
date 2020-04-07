@@ -7,7 +7,7 @@ A `which` or `command -v` like tool for Golang.
 Open a terminal and run the following:
 
 ```
-$ go get -u gitlab.com/mjwhitta/where
+$ go get -u gitlab.com/mjwhitta/where/cmd/where
 ```
 
 ## Usage
