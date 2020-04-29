@@ -8,11 +8,6 @@ import (
 	"gitlab.com/mjwhitta/pathname"
 )
 
-var cache = map[string]string{}
-
-// Version is the package version.
-const Version = "1.0.2"
-
 // Is will return the full path to the specified cmd if it exists in
 // the defined PATH env var.
 func Is(cmd string) string {
