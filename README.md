@@ -1,5 +1,9 @@
 # where
 
+[![Go Report Card](https://goreportcard.com/badge/gitlab.com/mjwhitta/where)](https://goreportcard.com/report/gitlab.com/mjwhitta/where)
+
+## What is this?
+
 A `which` or `command -v` like tool for Golang.
 
 ## How to install
