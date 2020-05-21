@@ -11,19 +11,20 @@ import (
 // Is will return the full path to the specified cmd if it exists in
 // the defined PATH env var.
 func Is(cmd string) string {
-	if len(cmd) == 0 {
+	var cached interface{}
+	var dirs []string
+	var exts []string
+	var fullpath string
+	var hasKey bool
+
+	if cmd == "" {
 		return ""
 	}
 
 	// Return cached value if it exists
-	var hasKey bool
-	if _, hasKey = cache[cmd]; hasKey {
-		return cache[cmd]
+	if cached, hasKey = cache.Get(cmd); hasKey {
+		return cached.(string)
 	}
-
-	var dirs []string
-	var exts []string
-	var fullpath string
 
 	// Get all PATH directories
 	dirs = strings.Split(
@@ -41,9 +42,11 @@ func Is(cmd string) string {
 	for _, dir := range dirs {
 		for _, ext := range exts {
 			fullpath = filepath.Join(dir, cmd+ext)
+
 			if pathname.DoesExist(fullpath) {
-				cache[cmd] = pathname.ExpandPath(fullpath)
-				return cache[cmd]
+				cache.Put(cmd, pathname.ExpandPath(fullpath))
+				cached, _ = cache.Get(cmd)
+				return cached.(string)
 			}
 		}
 	}
