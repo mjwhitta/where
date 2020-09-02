@@ -6,7 +6,7 @@
 
 ## What is this?
 
-A `which` or `command -v` like tool for Golang.
+A `which` or `command -v` like tool for Go.
 
 ## How to install
 
