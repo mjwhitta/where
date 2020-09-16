@@ -13,8 +13,19 @@ A `which` or `command -v` like tool for Go.
 Open a terminal and run the following:
 
 ```
-$ go get -u gitlab.com/mjwhitta/where/cmd/where
+$ go get -ldflags "-s -w" -u gitlab.com/mjwhitta/where/cmd/where
 ```
+
+Or install from source:
+
+```
+$ git clone https://gitlab.com/mjwhitta/where.git
+$ cd where
+$ git submodule update --init
+$ make install
+```
+
+**Note:** `make install` will install to `$HOME/.local/bin`.
 
 ## Usage
 
