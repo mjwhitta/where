@@ -13,7 +13,9 @@ A `which` or `command -v` like tool for Go.
 Open a terminal and run the following:
 
 ```
-$ go get --ldflags "-s -w" --trimpath -u gitlab.com/mjwhitta/where/cmd/where
+$ go get --ldflags "-s -w" --trimpath -u gitlab.com/mjwhitta/where
+$ go install --ldflags "-s -w" --trimpath \
+    gitlab.com/mjwhitta/where/cmd/where@latest
 ```
 
 Or install from source:
