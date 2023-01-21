@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"gitlab.com/mjwhitta/pathname"
+	"github.com/mjwhitta/pathname"
 )
 
 // Is will return the full path to the specified cmd if it exists in

@@ -1,8 +1,8 @@
 package where
 
-import "gitlab.com/mjwhitta/safety"
+import "github.com/mjwhitta/safety"
 
 var cache *safety.Map = safety.NewMap()
 
 // Version is the package version.
-const Version = "1.2.5"
+const Version = "1.2.6"

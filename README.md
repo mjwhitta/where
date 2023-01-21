@@ -2,7 +2,7 @@
 
 <a href="https://www.buymeacoffee.com/mjwhitta">🍪 Buy me a cookie</a>
 
-[![Go Report Card](https://goreportcard.com/badge/gitlab.com/mjwhitta/where)](https://goreportcard.com/report/gitlab.com/mjwhitta/where)
+[![Go Report Card](https://goreportcard.com/badge/github.com/mjwhitta/where)](https://goreportcard.com/report/github.com/mjwhitta/where)
 
 ## What is this?
 
@@ -13,15 +13,15 @@ A `which` or `command -v` like tool for Go.
 Open a terminal and run the following:
 
 ```
-$ go get --ldflags "-s -w" --trimpath -u gitlab.com/mjwhitta/where
+$ go get --ldflags "-s -w" --trimpath -u github.com/mjwhitta/where
 $ go install --ldflags "-s -w" --trimpath \
-    gitlab.com/mjwhitta/where/cmd/where@latest
+    github.com/mjwhitta/where/cmd/where@latest
 ```
 
 Or compile from source:
 
 ```
-$ git clone https://gitlab.com/mjwhitta/where.git
+$ git clone https://github.com/mjwhitta/where.git
 $ cd where
 $ git submodule update --init
 $ make
@@ -35,7 +35,7 @@ package main
 import (
     "fmt"
 
-    "gitlab.com/mjwhitta/where"
+    "github.com/mjwhitta/where"
 )
 
 func main() {
@@ -45,4 +45,4 @@ func main() {
 
 ## Links
 
-- [Source](https://gitlab.com/mjwhitta/where)
+- [Source](https://github.com/mjwhitta/where)

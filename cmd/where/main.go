@@ -1,10 +1,10 @@
 package main
 
 import (
-	"gitlab.com/mjwhitta/cli"
-	hl "gitlab.com/mjwhitta/hilighter"
-	"gitlab.com/mjwhitta/log"
-	"gitlab.com/mjwhitta/where"
+	"github.com/mjwhitta/cli"
+	hl "github.com/mjwhitta/hilighter"
+	"github.com/mjwhitta/log"
+	"github.com/mjwhitta/where"
 )
 
 func main() {
