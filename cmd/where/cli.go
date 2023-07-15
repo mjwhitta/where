@@ -2,7 +2,6 @@ package main
 
 import (
 	"os"
-	"strings"
 
 	"github.com/mjwhitta/cli"
 	hl "github.com/mjwhitta/hilighter"
@@ -33,20 +32,17 @@ func init() {
 	cli.Authors = []string{"Miles Whittaker <mj@whitta.dev>"}
 	cli.Banner = hl.Sprintf("%s [OPTIONS] <cmd>", os.Args[0])
 	cli.BugEmail = "where.bugs@whitta.dev"
-	cli.ExitStatus = strings.Join(
-		[]string{
-			"Normally the exit status is 0. In the event of an error",
-			"the exit status will be one of the below:\n\n",
-			hl.Sprintf("%d: Invalid option\n", InvalidOption),
-			hl.Sprintf("%d: Missing option\n", MissingOption),
-			hl.Sprintf("%d: Invalid argument\n", InvalidArgument),
-			hl.Sprintf("%d: Missing argument\n", MissingArgument),
-			hl.Sprintf("%d: Extra argument\n", ExtraArgument),
-			hl.Sprintf("%d: Exception", Exception),
-		},
-		" ",
+	cli.ExitStatus(
+		"Normally the exit status is 0. In the event of an error the",
+		"exit status will be one of the below:\n\n",
+		hl.Sprintf("%d: Invalid option\n", InvalidOption),
+		hl.Sprintf("%d: Missing option\n", MissingOption),
+		hl.Sprintf("%d: Invalid argument\n", InvalidArgument),
+		hl.Sprintf("%d: Missing argument\n", MissingArgument),
+		hl.Sprintf("%d: Extra argument\n", ExtraArgument),
+		hl.Sprintf("%d: Exception", Exception),
 	)
-	cli.Info = "Simple which-like example binary."
+	cli.Info("Simple which-like example binary.")
 	cli.SeeAlso = []string{"command", "which"}
 	cli.Title = "Where"
 

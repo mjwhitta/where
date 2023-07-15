@@ -11,7 +11,7 @@ import (
 // Is will return the full path to the specified cmd if it exists in
 // the defined PATH env var.
 func Is(cmd string) string {
-	var cached interface{}
+	var cached any
 	var dirs []string
 	var exts []string
 	var fullpath string
