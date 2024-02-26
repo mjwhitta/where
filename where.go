@@ -3,7 +3,7 @@ package where
 import (
 	"os"
 	"path/filepath"
-	"strings"
+	"runtime"
 
 	"github.com/mjwhitta/pathname"
 )
@@ -27,13 +27,15 @@ func Is(cmd string) string {
 	}
 
 	// Get all PATH directories
-	dirs = strings.Split(
-		os.Getenv("PATH"),
-		string(os.PathListSeparator),
-	)
+	dirs = filepath.SplitList(os.Getenv("PATH"))
+	if len(dirs) == 0 {
+		if path, ok := defPaths[runtime.GOOS]; ok {
+			dirs = path
+		}
+	}
 
 	// Get all valid extensions
-	exts = strings.Split(os.Getenv("PATHEXT"), ";")
+	exts = filepath.SplitList(os.Getenv("PATHEXT"))
 	if len(exts) == 0 {
 		exts = append(exts, "")
 	}
