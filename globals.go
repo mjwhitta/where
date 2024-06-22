@@ -41,4 +41,4 @@ var defPaths map[string][]string = map[string][]string{
 }
 
 // Version is the package version.
-const Version string = "1.3.2"
+const Version string = "1.3.3"
