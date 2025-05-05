@@ -6,7 +6,11 @@ var cache *safety.Map = safety.NewMap()
 
 var defPaths map[string][]string = map[string][]string{
 	"darwin": {
+		"$HOME/bin",
+		"$HOME/.local/bin",
+		"$HOME/go/bin",
 		"/usr/bin/core_perl",
+		"/usr/bin/site_perl",
 		"/usr/bin/vendor_perl",
 		"/usr/local/bin",
 		"/usr/local/sbin",
@@ -17,7 +21,11 @@ var defPaths map[string][]string = map[string][]string{
 		"/usr/local/osx-ndk-x86/bin",
 	},
 	"linux": {
+		"$HOME/bin",
+		"$HOME/.local/bin",
+		"$HOME/go/bin",
 		"/usr/bin/core_perl",
+		"/usr/bin/site_perl",
 		"/usr/bin/vendor_perl",
 		"/usr/local/bin",
 		"/usr/local/sbin",
@@ -41,4 +49,4 @@ var defPaths map[string][]string = map[string][]string{
 }
 
 // Version is the package version.
-const Version string = "1.3.4"
+const Version string = "1.3.5"
