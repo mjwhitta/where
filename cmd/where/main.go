@@ -1,8 +1,9 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/mjwhitta/cli"
-	hl "github.com/mjwhitta/hilighter"
 	"github.com/mjwhitta/log"
 	"github.com/mjwhitta/where"
 )
@@ -11,13 +12,19 @@ func main() {
 	defer func() {
 		if r := recover(); r != nil {
 			if flags.verbose {
-				panic(r.(error).Error())
+				panic(r)
 			}
-			log.ErrX(Exception, r.(error).Error())
+
+			switch r := r.(type) {
+			case error:
+				log.ErrX(Exception, r.Error())
+			case string:
+				log.ErrX(Exception, r)
+			}
 		}
 	}()
 
 	validate()
 
-	hl.Println(where.Is(cli.Arg(0)))
+	fmt.Println(where.Is(cli.Arg(0)))
 }

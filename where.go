@@ -23,6 +23,7 @@ func Is(cmd string) string {
 
 	// Return cached value if it exists
 	if cached, hasKey = cache.Get(cmd); hasKey {
+		//nolint:errcheck,forcetypeassert // Was cached as string
 		return cached.(string)
 	}
 
@@ -48,9 +49,10 @@ func Is(cmd string) string {
 			if ok, e := pathname.DoesExist(fullpath); e != nil {
 				continue // Not accessible
 			} else if ok {
-				cache.Put(cmd, pathname.ExpandPath(fullpath))
-				cached, _ = cache.Get(cmd)
-				return cached.(string)
+				fullpath = pathname.ExpandPath(fullpath)
+				cache.Put(cmd, fullpath)
+
+				return fullpath
 			}
 		}
 	}
