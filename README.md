@@ -3,6 +3,7 @@
 [![Yum](https://img.shields.io/badge/-Buy%20me%20a%20cookie-blue?labelColor=grey&logo=cookiecutter&style=for-the-badge)](https://www.buymeacoffee.com/mjwhitta)
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/mjwhitta/where?style=for-the-badge)](https://goreportcard.com/report/github.com/mjwhitta/where)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mjwhitta/where/ci.yaml?style=for-the-badge)](https://github.com/mjwhitta/where/actions)
 ![License](https://img.shields.io/github/license/mjwhitta/where?style=for-the-badge)
 
 ## What is this?
