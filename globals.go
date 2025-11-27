@@ -3,7 +3,7 @@ package where
 import "github.com/mjwhitta/safety"
 
 // Version is the package version.
-const Version string = "1.3.9"
+const Version string = "1.3.10"
 
 var (
 	cache    *safety.Map         = safety.NewMap()
